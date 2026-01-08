@@ -27,7 +27,7 @@ Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [UserController::class, 'login']);
 Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
 Route::post('/register', [UserController::class, 'store']);
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/ticket', [TicketController::class, 'index'])->name('ticket');
 Route::get('/ticket/create', [TicketController::class, 'showCreate'])->name('ticket.create');
 Route::post('/ticket/create', [TicketController::class, 'create']);

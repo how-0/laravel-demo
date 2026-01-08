@@ -1,6 +1,6 @@
 <script setup>
 import { Head,useForm } from '@inertiajs/vue3'
-
+import Layout from '@/Components/layout.vue'
 const form = useForm({
     name: '',
     gender: '',
@@ -11,6 +11,7 @@ const form = useForm({
 </script>
 
 <template>
+    <layout>
         <Head title="Create Ticket" />
         <h1 class="mx-auto max-w-sm text-white mb-4 text-4xl font-bold tracking-tight text-heading md:text-5xl lg:text-6xl">Create Ticket</h1><br>
       <form @submit.prevent="form.post('/ticket/create')" class="max-w-sm mx-auto">
@@ -51,6 +52,6 @@ const form = useForm({
         <button type="submit" class="flex mx-auto max-w-sm text-white bg-custom-blue box-border border border-transparent hover:bg-blue focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">Submit</button>
 
       </form>   
-
+</layout>
 
 </template>

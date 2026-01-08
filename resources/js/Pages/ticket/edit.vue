@@ -1,6 +1,6 @@
 <script setup>
 import { Head,useForm,usePage } from '@inertiajs/vue3'
-
+import Layout from '@/Components/layout.vue'
 const props = defineProps(["ticket"]);
 
 const form = useForm({
@@ -13,6 +13,7 @@ console.log(props);
 </script>
 
 <template>
+    <layout>   
         <Head title="Edit Ticket" />
         <h1 class="flex text-center mx-auto max-w-sm text-white mb-4 text-4xl font-bold tracking-tight text-heading md:text-5xl lg:text-6xl">Edit Ticket</h1><br>
       <form @submit.prevent="form.put(`/ticket/edit/${ticket.id}`)" class="max-w-sm mx-auto">
@@ -53,6 +54,6 @@ console.log(props);
         <button type="submit" class="flex mx-auto max-w-sm text-white bg-custom-blue box-border border border-transparent hover:bg-blue focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">Submit</button>
 
       </form>   
-
+ </layout>
 
 </template>
